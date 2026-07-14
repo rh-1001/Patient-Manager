@@ -10,9 +10,11 @@ class PatientQueue{
     private:
     vector <Patient> waitingPatients;
     vector <Patient> treatedPatients;
+    int nextPatientID;
 
     public:
 
+    PatientQueue();
     void addPatient();
     void removePatient();
     void displayPatients();

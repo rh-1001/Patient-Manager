@@ -16,18 +16,11 @@ class Patient {
     public:
 
     //Constructor initializing class
-    Patient (int ID, string newPatientName, int newPatientAge, string newCondition, string newPriority){
+    Patient (int ID, string newPatientName, int newPatientAge, string newCondition, string newPriority);
         
-        patientID = ID;
-        name = newPatientName;
-        age = newPatientAge;
-        condition = newCondition;
-        priority = newPriority;
-        bool istreated =false;
-    };
 
     // Getter for accessing patient ID
-    int getpatientID();
+    int getPatientID();
 
     // Getter for accessing patient name & setter for modifying patient name
     string getName();
