@@ -86,21 +86,23 @@ void PatientQueue::displayPatients(){
             cout << "Patient priority is: " << treatedPatients[i].getPriority() << endl;
             cout <<endl; 
 
+            return;
             }
+        cout << " Patient not found!" << endl;
         }
     }
 
-// Implementing search function
+// Implementing search function for waiting patients
 void PatientQueue::searchPatient(){
 
-    int patientID;
+    int searchID;
 
     cout << " Enter patient ID: " << endl;
-    cin >> patientID;
+    cin >> searchID;
 
-    for (int i = 0; waitingPatients.size(); i++){
+    for (int i = 0; i < waitingPatients.size(); i++){
 
-        if ( patientID == patientID ){
+        if ( searchID == waitingPatients[i].getPatientID() ){
 
             cout << "Patient ID is: " << waitingPatients[i].getPatientID() << endl;
             cout << "Patient name is: " << waitingPatients[i].getName() << endl;
@@ -108,10 +110,38 @@ void PatientQueue::searchPatient(){
             cout << "Patient condition is: " << waitingPatients[i].getCondition() << endl;
             cout << "Patient priority is: " << waitingPatients[i].getPriority() << endl;
             cout <<endl; 
-        }else{
 
-            cout << " Patient not found." << endl;
+            return;
+
         }
+        }
+        cout << " Patient not found." << endl;
     }
+    
+// Implementing search function for treated patients
+void PatientQueue::searchPatient(){
 
-}
+    int searchID;
+
+    cout << " Enter patient ID: " << endl;
+    cin >> searchID;
+
+    for (int i = 0; i < treatedPatients.size(); i++){
+
+        if ( searchID == treatedPatients[i].getPatientID() ){
+
+            cout << "Patient ID is: " << treatedPatients[i].getPatientID() << endl;
+            cout << "Patient name is: " << treatedPatients[i].getName() << endl;
+            cout << "Patient age is: " << treatedPatients[i].getAge() << endl;
+            cout << "Patient condition is: " << treatedPatients[i].getCondition() << endl;
+            cout << "Patient priority is: " << treatedPatients[i].getPriority() << endl;
+            cout <<endl; 
+
+            return;
+
+        }
+        }
+        cout << " Patient not found." << endl;
+    }
+    
+
