@@ -1,0 +1,11 @@
+*.exe
+*.o
+*.obj
+*.out
+
+.vscode/
+
+build/
+
+Debug/
+Release/
