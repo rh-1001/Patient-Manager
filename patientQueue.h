@@ -1,7 +1,8 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include <vector>
-#include "patient.h"
+#include "Patient.h"
 
 using namespace std;
 
