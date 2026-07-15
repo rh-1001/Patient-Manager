@@ -1,32 +1,38 @@
 # Patient Management System
 
-A C++ console application that simulates a patient management system for an emergency department.
+## Overview
+A console-based Patient Management System developed in C++ using object-oriented programming principles.
 
-## Features (Planned)
+## Features
 
-- Register new patients
-- Automatically assign patient IDs
-- Search for patients
-- Update patient information
-- Prioritize patients
+- Add new patients
+- Display waiting patients
+- Display treated patients
+- Search patients by ID
 - Mark patients as treated
-- Display waiting and treated patients
-- Store patients using STL vectors
+- Automatic patient ID generation
+- Input validation
 
 ## Technologies
 
 - C++
 - Object-Oriented Programming
-- STL (vector)
+- STL Vector
 - Git
-- GitHub
+- Visual Studio Code
 
-## Learning Goals
+## Concepts Demonstrated
 
-This project is being built to strengthen my understanding of:
-
-- Classes and objects
-- Encapsulation
+- Classes and Objects
 - Constructors
-- STL containers
-- Software design principles
+- Encapsulation
+- Getters and Setters
+- Vectors
+- Functions
+
+## Future Improvements
+
+- Priority queue implementation
+- File storage
+- Sorting patients by priority
+- Better input validation
