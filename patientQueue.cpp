@@ -4,8 +4,6 @@
 #include "Patient.h"
 using namespace std;
 
-vector<Patient> waitingPatients;
-vector <Patient> treatedPatients;
 
 //Constructor
 PatientQueue::PatientQueue(){
@@ -51,7 +49,7 @@ void PatientQueue:: addPatient(){
 }
 
 // Implementing displayPatient() function for waiting patients
-void PatientQueue::displayPatients(){
+void PatientQueue::displayWaitingPatients(){
     if (waitingPatients.empty()){
         cout << "No patients waiting."<< endl;
 
@@ -71,7 +69,7 @@ void PatientQueue::displayPatients(){
     }
 
 // Implementing displayPatient() function for treated patients
-void PatientQueue::displayPatients(){
+void PatientQueue::displayTreatedPatients(){
     if (treatedPatients.empty()){
         cout << "No patients have been treated yet."<< endl;
 
@@ -86,14 +84,12 @@ void PatientQueue::displayPatients(){
             cout << "Patient priority is: " << treatedPatients[i].getPriority() << endl;
             cout <<endl; 
 
-            return;
             }
-        cout << " Patient not found!" << endl;
         }
     }
 
 // Implementing search function for waiting patients
-void PatientQueue::searchPatient(){
+void PatientQueue::searchWaitingPatient(){
 
     int searchID;
 
@@ -119,7 +115,7 @@ void PatientQueue::searchPatient(){
     }
     
 // Implementing search function for treated patients
-void PatientQueue::searchPatient(){
+void PatientQueue::searchTreatedPatient(){
 
     int searchID;
 
@@ -143,5 +139,38 @@ void PatientQueue::searchPatient(){
         }
         cout << " Patient not found." << endl;
     }
+
+// Implementation for function that moves treated to another vector
+void PatientQueue:: markPatientsAsTreated(){
+
+    int searchID;
+    cout << "Enter Patient ID: " << endl;
+    cin >> searchID;
+
+    //Loop that searches through the waiting patients vector
+    for (int i = 0; i < waitingPatients.size(); i++){
+
+        if ( searchID == waitingPatients[i].getPatientID() ){
+        
+        //Changing status of the patient
+        waitingPatients[i].setTreated(true);
+        if (waitingPatients[i].isTreated()) {
+        cout << "Status: Treated" << endl;
+        } else {
+        cout << "Status: Waiting" << endl;
+    }
+        //Adding treated patients to the treated patients vector
+        treatedPatients.push_back(waitingPatients[i]);
+
+        //Removing treated patients from waiting patients vector
+        waitingPatients.erase(waitingPatients.begin() + i);
+
+        cout << " Patient has been successfully treated!"  << endl;
+
+     return;
+    }
     
+
+}
+cout << "Patient not found." << endl;}
 

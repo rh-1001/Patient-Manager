@@ -83,4 +83,15 @@ using namespace std;
         }
     }
 
+//Implementation of getter for patient status
+
+bool Patient:: isTreated(){
+    return treated;
+}
+
+// Implementation of getter for patient status
+void Patient::setTreated(bool status){
+    treated =status;
+}
+
     

@@ -17,8 +17,10 @@ class PatientQueue{
     PatientQueue();
     void addPatient();
     void removePatient();
-    void displayPatients();
-    void searchPatient();
+    void displayWaitingPatients();
+    void displayTreatedPatients();
+    void searchWaitingPatient();
+    void searchTreatedPatient();
     void markPatientsAsTreated();
 
 };
